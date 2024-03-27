@@ -12,6 +12,11 @@ class LaravelApiLoggerServiceProvider extends ServiceProvider
     {
         $router = $this->app->make(Router::class);
         $router->aliasMiddleware('api-logger', ApiLoggerMiddleware::class);
+        $this->mergeConfigFrom(__DIR__.'/../config/api-logger.php', 'api-logger');
+        
+        $this->publishes([
+            __DIR__.'/../config/api-logger.php' => config_path('api-logger.php'),
+        ], 'config');
     }
 
     public function register()

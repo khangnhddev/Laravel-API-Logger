@@ -10,19 +10,25 @@ class ApiLoggerMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        // Log the incoming request details
-        Log::info('API Request', [
-            'url' => $request->fullUrl(),
-            'method' => $request->method(),
-            'input' => $request->all(),
-        ]);
+        // // Log the incoming request details
+        // Log::info('API Request', [
+        //     'url' => $request->fullUrl(),
+        //     'method' => $request->method(),
+        //     'input' => $request->all(),
+        // ]);
 
         $response = $next($request);
 
-        // Log the response details
-        Log::info('API Response', [
-            'status' => $response->status(),
-            'content' => $response->getContent(),
+        // // Log the response details
+        // Log::info('API Response', [
+        //     'status' => $response->status(),
+        //     'content' => $response->getContent(),
+        // ]);
+        
+        Log::channel(config('api-logger.channel'))->info('API Request', [
+            'url' => $request->fullUrl(),
+            'method' => $request->method(),
+            'input' => $request->all(),
         ]);
 
         return $response;
