@@ -16,5 +16,26 @@ You can install the package via Composer. Run the following command in your Lara
 
 ```bash
 composer require khangnhddev/api-logger-laravel
+```
 
 
+## Configuration
+After installation, publish the configuration file to customize the package to your needs:
+
+```bash
+php artisan vendor:publish --provider="Khangnhddev\ApiLoggerLaravel\ServiceProvider" --tag="config"
+```
+## Usage
+To activate API logging, register the middleware in your app/Http/Kernel.php or on individual routes.
+
+```bash
+protected $middleware = [
+    // Other middleware...
+    \Khangnhddev\ApiLoggerLaravel\Middleware\ApiLoggerMiddleware::class,
+];
+```
+
+```
+Route::middleware(['api-logger'])->group(function () {
+    // Your API routes
+});
