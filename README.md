@@ -1,16 +1,20 @@
 # Laravel API Logger
 
-A Laravel package designed to log API requests and responses, making debugging easier and providing insights into API usage.
+A comprehensive solution for logging API requests and responses in Laravel applications. This package simplifies the process of debugging and monitoring API traffic by providing detailed logs with configurable options.
 
 ## Features
 
-- Configurable log channels.
-- Filtering of sensitive data from logs.
-- Customizable log entry formats.
+- **Easy Configuration**: Set up and configure with just a few steps.
+- **Log Channels**: Use different log channels based on the environment or preference.
+- **Sensitive Data Filtering**: Exclude sensitive information like passwords from logs to safeguard user privacy.
+- **Flexible Log Levels**: Define log levels for different scenarios or response codes.
+- **Customizable Log Output**: Format your log entries according to your specifications.
 
 ## Installation
 
-To install the package, run the following command in your Laravel project:
+You can install the package via Composer. Run the following command in your Laravel project:
 
 ```bash
 composer require khangnhddev/api-logger-laravel
+
+
