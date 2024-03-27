@@ -1,0 +1,25 @@
+{
+    "name": "khangnhddev/api-logger-laravel",
+    "description": "A Laravel package to log API requests and responses for debugging purposes.",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Khangnhddev\\ApiLoggerLaravel\\LaravelApiLoggerServiceProvider"
+            ]
+        }
+    },
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Khang Nguyen",
+            "email": "khangnhd.it@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Khangnhddev\\ApiLoggerLaravel\\": "src/"
+        }
+    },
+    "require": {}
+}
